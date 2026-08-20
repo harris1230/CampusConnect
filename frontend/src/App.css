@@ -1,0 +1,457 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f5f7fb;
+  color: #172033;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 72px;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7%;
+
+  border-bottom: 1px solid #e8ebf2;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1d2939;
+}
+
+.navbar-brand span {
+  color: #2563eb;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-info strong {
+  font-size: 14px;
+}
+
+.user-info span {
+  font-size: 11px;
+  color: #2563eb;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.logout-button {
+  border: 1px solid #d9dee8;
+  background: white;
+
+  padding: 9px 16px;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.logout-button:hover {
+  background: #f3f6fa;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.dashboard-content {
+  width: min(1150px, 90%);
+  margin: auto;
+}
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-section {
+  padding: 65px 0 45px;
+}
+
+.welcome-label,
+.section-label {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.welcome-section h1 {
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.welcome-description {
+  color: #667085;
+  font-size: 17px;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+  background: #eff6ff;
+  color: #1d4ed8;
+
+  border: 1px solid #bfdbfe;
+
+  padding: 13px 17px;
+
+  border-radius: 10px;
+
+  margin-bottom: 30px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   EVENTS HEADER
+========================= */
+
+.events-section {
+  padding-bottom: 70px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+}
+
+.event-count {
+  color: #667085;
+  font-size: 14px;
+}
+
+/* =========================
+   EVENT GRID
+========================= */
+
+.events-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================
+   EVENT CARD
+========================= */
+
+.event-card {
+  background: white;
+
+  border: 1px solid #e7eaf0;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.event-card-top {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  padding: 18px 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-badge {
+  color: white;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.event-id {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+}
+
+.event-card-content {
+  padding: 25px;
+}
+
+.event-card h3 {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.event-description {
+  color: #667085;
+
+  line-height: 1.6;
+
+  margin-bottom: 24px;
+}
+
+/* =========================
+   EVENT DETAILS
+========================= */
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+.event-detail {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+}
+
+.detail-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eff6ff;
+
+  border-radius: 9px;
+
+  flex-shrink: 0;
+}
+
+.event-detail small {
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+.event-detail p {
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-top: 2px;
+}
+
+/* =========================
+   REGISTER BUTTON
+========================= */
+
+.register-button {
+  width: 100%;
+
+  border: none;
+
+  background: #2563eb;
+  color: white;
+
+  padding: 13px 18px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.register-button:hover {
+  background: #1d4ed8;
+}
+
+.register-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 50px;
+
+  text-align: center;
+
+  color: #667085;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+
+  border: 3px solid #e5e7eb;
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  margin: 0 auto 15px;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  background: white;
+
+  border: 1px solid #e7eaf0;
+
+  border-radius: 16px;
+
+  text-align: center;
+
+  padding: 70px 20px;
+}
+
+.empty-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.empty-state h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: #667085;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .dashboard-content {
+    width: 90%;
+  }
+
+  .welcome-section {
+    padding: 45px 0 35px;
+  }
+
+  .welcome-section h1 {
+    font-size: 36px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card-content {
+    padding: 20px;
+  }
+  .register-button.registered {
+  background: #16a34a;
+  cursor: default;
+}
+
+.register-button.registered:hover {
+  background: #16a34a;
+}
+}
