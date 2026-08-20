@@ -1,4 +1,4 @@
-const API_URL = "https://campusconnect-1dv9.onrender.com";// Get JWT token
+const API_URL = import.meta.env.VITE_API_URL;
 const getToken = () => {
   return localStorage.getItem("token");
 };
