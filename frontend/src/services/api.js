@@ -1,6 +1,4 @@
-const API_URL = "http://localhost:8080/api";
-
-// Get JWT token
+const API_URL = "https://campusconnect-1dv9.onrender.com";// Get JWT token
 const getToken = () => {
   return localStorage.getItem("token");
 };
