@@ -350,11 +350,11 @@ function AdminDashboard({ onLogout }) {
                 >
 
                   <span>
-                    {registration.user?.name}
+                    {registration.student?.name}
                   </span>
 
                   <span>
-                    {registration.user?.email}
+                    {registration.student?.email}
                   </span>
 
                   <span>
