@@ -6,7 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.campusconnect.backend.dto.LoginRequest;
 import com.campusconnect.backend.dto.LoginResponse;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(
+    origins = "https://campusconnect-1-h9sq.onrender.com"
+)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
