@@ -35,7 +35,10 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-                List.of("http://localhost:5173")
+                List.of(
+                        "http://localhost:5173",
+                        "https://campusconnect-1-h9sq.onrender.com"
+                )
         );
 
         configuration.setAllowedMethods(
@@ -75,20 +78,19 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(auth -> auth
 
-                        // IMPORTANT:
-                        // Allow browser CORS preflight requests
+                        // Allow CORS preflight requests
                         .requestMatchers(HttpMethod.OPTIONS, "/**")
                         .permitAll()
 
-                        // Login/register authentication endpoints
+                        // Login/register
                         .requestMatchers("/api/auth/**")
                         .permitAll()
 
-                         // Admin APIs require ADMIN role
+                        // Admin APIs
                         .requestMatchers("/api/admin/**")
                         .hasRole("ADMIN")
 
-                        // All event APIs require login
+                        // Event APIs
                         .requestMatchers("/api/events/**")
                         .authenticated()
 
