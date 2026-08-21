@@ -1,4 +1,5 @@
 const API_URL = "https://campusconnect-1dv9.onrender.com";
+
 const getToken = () => {
   return localStorage.getItem("token");
 };
@@ -48,7 +49,7 @@ const request = async (url, options = {}) => {
 // ====================
 
 export const login = async (email, password) => {
-  const data = await request("/auth/login", {
+  const data = await request("/api/auth/login", {
     method: "POST",
     body: JSON.stringify({
       email,
@@ -75,28 +76,28 @@ export const logout = () => {
 // ====================
 
 export const getEvents = async () => {
-  return request("/events");
+  return request("/api/events");
 };
 
 export const getEvent = async (eventId) => {
-  return request(`/events/${eventId}`);
+  return request(`/api/events/${eventId}`);
 };
 
 // Register current user for event
 export const registerForEvent = async (eventId) => {
-  return request(`/events/${eventId}/register`, {
+  return request(`/api/events/${eventId}/register`, {
     method: "POST",
   });
 };
 
 // Get registration count
 export const getRegistrationCount = async (eventId) => {
-  return request(`/events/${eventId}/registrations/count`);
+  return request(`/api/events/${eventId}/registrations/count`);
 };
 
 // Get current user's registrations
 export const getMyRegistrations = async () => {
-  return request("/events/my-registrations");
+  return request("/api/events/my-registrations");
 };
 
 // ====================
@@ -105,17 +106,17 @@ export const getMyRegistrations = async () => {
 
 // Get admin dashboard statistics
 export const getAdminDashboard = async () => {
-  return request("/admin/dashboard");
+  return request("/api/admin/dashboard");
 };
 
 // Get all events for admin
 export const getAdminEvents = async () => {
-  return request("/admin/events");
+  return request("/api/admin/events");
 };
 
 // Create a new event
 export const createAdminEvent = async (event) => {
-  return request("/admin/events", {
+  return request("/api/admin/events", {
     method: "POST",
     body: JSON.stringify(event),
   });
@@ -123,7 +124,7 @@ export const createAdminEvent = async (event) => {
 
 // Update an event
 export const updateAdminEvent = async (eventId, event) => {
-  return request(`/admin/events/${eventId}`, {
+  return request(`/api/admin/events/${eventId}`, {
     method: "PUT",
     body: JSON.stringify(event),
   });
@@ -131,11 +132,11 @@ export const updateAdminEvent = async (eventId, event) => {
 
 // Delete an event
 export const deleteAdminEvent = async (eventId) => {
-  return request(`/admin/events/${eventId}`, {
+  return request(`/api/admin/events/${eventId}`, {
     method: "DELETE",
   });
 };
 
 export const getAdminRegistrations = async () => {
-  return request("/admin/registrations");
+  return request("/api/admin/registrations");
 };
