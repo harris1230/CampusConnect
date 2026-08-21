@@ -31,7 +31,24 @@ public class UserService {
 
         String adminEmail = "admin@campusconnect.com";
 
-        if (!userRepository.existsByEmail(adminEmail)) {
+        var existingUser = userRepository.findByEmail(adminEmail);
+
+        if (existingUser.isPresent()) {
+
+            User admin = existingUser.get();
+
+            if (admin.getRole() != Role.ADMIN) {
+                admin.setRole(Role.ADMIN);
+                userRepository.save(admin);
+
+                System.out.println("=================================");
+                System.out.println("EXISTING USER PROMOTED TO ADMIN");
+                System.out.println("Email: " + adminEmail);
+                System.out.println("Role: ADMIN");
+                System.out.println("=================================");
+            }
+
+        } else {
 
             User admin = new User(
                     "Admin",
