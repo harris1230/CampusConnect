@@ -494,3 +494,74 @@
     font-size: 11px;
   }
 }
+/* =========================
+   AUTH SWITCH
+========================= */
+
+.auth-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  margin-top: 24px;
+
+  color: #64748b;
+  font-size: 14px;
+}
+
+.auth-switch button {
+  border: none;
+  background: none;
+
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.auth-switch button:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.login-success {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 12px 14px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+
+  background: #f0fdf4;
+
+  color: #16a34a;
+
+  font-size: 14px;
+}
+
+/* =========================
+   PASSWORD HINT
+========================= */
+
+.password-hint {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}

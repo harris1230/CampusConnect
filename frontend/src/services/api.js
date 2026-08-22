@@ -140,3 +140,12 @@ export const deleteAdminEvent = async (eventId) => {
 export const getAdminRegistrations = async () => {
   return request("/api/admin/registrations");
 };
+
+export const registerUser = async (name, email, password) => {
+  return request(
+    `/api/auth/register?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
+    {
+      method: "POST",
+    }
+  );
+};
